@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Gradle Build (Debug + Reload)",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/c", "gradlew.bat assembleDebug && code --reuse-window ."],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Gradle Init Build (Clean + Debug + Reload)",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "gradlew.bat clean assembleDebug && code --reuse-window ."
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "React Native Run Android + Reload",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/c", "npx react-native run-android && code --reuse-window ."],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
