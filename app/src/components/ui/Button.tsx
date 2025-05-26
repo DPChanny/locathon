@@ -1,18 +1,18 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {TouchableOpacity, ViewStyle} from 'react-native';
 import {sva, VariantProps} from '@/lib/sva';
 import {styles} from '@/styles/components/ui/Button';
 import {ms} from '@/lib/ms';
 
-const buttonVariants = sva('button', styles, {
+export const buttonVariants = sva(styles.button, {
   variants: {
     intent: {
-      primary: 'button--primary',
-      ghost: 'button--ghost',
+      primary: styles['button--primary'],
+      ghost: styles['button--ghost'],
     },
     size: {
-      sm: 'button--sm',
-      lg: 'button--lg',
+      sm: styles['button--sm'],
+      lg: styles['button--lg'],
     },
   },
   defaultVariants: {
@@ -22,9 +22,9 @@ const buttonVariants = sva('button', styles, {
 });
 
 type ButtonProps = {
-  children: React.ReactNode;
-  onPress: () => void;
-  style?: object;
+  children?: React.ReactNode;
+  onPress?: () => void;
+  style?: ViewStyle;
   variantIntent?: VariantProps<typeof buttonVariants>['intent'];
   variantSize?: VariantProps<typeof buttonVariants>['size'];
 };
@@ -36,13 +36,12 @@ export const Button = ({
   variantIntent,
   variantSize,
 }: ButtonProps) => {
-  const {button, text} = buttonVariants({
+  const {button} = buttonVariants({
     intent: variantIntent,
     size: variantSize,
   });
   return (
     <TouchableOpacity style={ms(button, style)} onPress={onPress}>
-      <Text style={ms(text, style)} />
       {children}
     </TouchableOpacity>
   );

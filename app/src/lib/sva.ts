@@ -1,63 +1,92 @@
 import {ViewStyle, TextStyle, ImageStyle} from 'react-native';
 
-type StyleObject = ViewStyle | TextStyle | ImageStyle;
-type Variants = Record<string, Record<string, string>>;
-export type StyleMap = Record<string, Record<string, StyleObject>>;
+export type StyleObject = ViewStyle | TextStyle | ImageStyle;
+export type RoleStyle = Record<string, StyleObject>;
 
-type SvaReturn<TVariants extends Variants> = {
-  (selected?: Record<string, string | undefined>): Record<string, StyleObject>;
+export type StyleMap<TRole extends RoleStyle> = {
+  [variantKey: string]: Partial<TRole>;
+};
+
+export type Variants<TRole extends RoleStyle> = Record<
+  string,
+  Record<string, Partial<TRole>>
+>;
+
+export type SvaReturn<
+  TRole extends RoleStyle,
+  TVariants extends Variants<TRole>,
+> = {
+  (selected?: Partial<{[K in keyof TVariants]: keyof TVariants[K]}>): TRole;
   variants: TVariants;
 };
 
-export function sva<TVariants extends Variants>(
-  base: string,
-  styles: StyleMap,
+export function sva<TRole extends RoleStyle, TVariants extends Variants<TRole>>(
+  baseStyle: TRole,
   config: {
     variants: TVariants;
-    defaultVariants?: Record<string, string>;
+    defaultVariants?: Partial<{
+      [K in keyof TVariants]: keyof TVariants[K];
+    }>;
   },
-): SvaReturn<TVariants> {
-  const fn = (selected?: Record<string, string | undefined>) => {
-    const keys = [base];
-    const variants = selected ?? {};
-
-    for (const variantKey of Object.keys(config.variants)) {
-      const rawValue = variants[variantKey];
-      const fallbackValue = config.defaultVariants?.[variantKey];
-      const value = rawValue !== undefined ? rawValue : fallbackValue;
-
-      if (value !== undefined) {
-        const key = config.variants[variantKey]?.[value];
-        if (key) keys.push(key);
-      }
-    }
-
+): SvaReturn<TRole, TVariants> {
+  const fn = (
+    selected?: Partial<{[K in keyof TVariants]: keyof TVariants[K]}>,
+  ): TRole => {
     const grouped: Record<string, StyleObject[]> = {};
-    for (const key of keys) {
-      const styleEntry = styles[key];
-      if (styleEntry) {
-        for (const role in styleEntry) {
-          if (!grouped[role]) grouped[role] = [];
-          grouped[role].push(styleEntry[role]);
-        }
-      }
+    for (const role in baseStyle) {
+      grouped[role] = [baseStyle[role]];
     }
 
-    const result: Record<string, StyleObject> = {};
+    const variants = selected ?? {};
+    const defaultVariants = config.defaultVariants ?? {};
+
+    (Object.keys(config.variants) as (keyof TVariants)[]).forEach(
+      variantKey => {
+        const fromSelected = (
+          variants as Partial<{[K in keyof TVariants]: keyof TVariants[K]}>
+        )[variantKey];
+        const fromDefault = Object.prototype.hasOwnProperty.call(
+          defaultVariants,
+          variantKey,
+        )
+          ? (
+              defaultVariants as Partial<{
+                [K in keyof TVariants]: keyof TVariants[K];
+              }>
+            )[variantKey]
+          : undefined;
+
+        const variantValue = fromSelected ?? fromDefault;
+
+        if (!variantValue) return;
+
+        const variantStyles = config.variants[variantKey][variantValue];
+        if (!variantStyles) return;
+
+        for (const role in variantStyles) {
+          if (!grouped[role]) grouped[role] = [];
+          grouped[role].push(variantStyles[role]!);
+        }
+      },
+    );
+
+    const result: TRole = {} as TRole;
     for (const role in grouped) {
-      result[role] = Object.assign({}, ...grouped[role]);
+      (result as Record<string, StyleObject>)[role] = Object.assign(
+        {},
+        ...grouped[role],
+      );
     }
 
     return result;
   };
 
-  (fn as SvaReturn<TVariants>).variants = config.variants;
-
-  return fn as SvaReturn<TVariants>;
+  (fn as SvaReturn<TRole, TVariants>).variants = config.variants;
+  return fn as SvaReturn<TRole, TVariants>;
 }
 
 export type VariantProps<
-  T extends {variants: Record<string, Record<string, string>>},
+  T extends {variants: Record<string, Record<string, any>>},
 > = {
   [K in keyof T['variants']]?: keyof T['variants'][K];
 };
