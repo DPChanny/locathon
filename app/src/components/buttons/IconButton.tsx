@@ -1,16 +1,18 @@
 import React from 'react';
-import * as S from '../../styles/IconButton.styles';
+import * as S from '../../styles/Button.styles';
+import {Pressable} from 'react-native';
 
 type IconParam = {
   icon: any;
   onPress?: () => void;
+  size?: number;
 };
 
-const IconButton = ({icon, onPress}: IconParam) => {
+const IconButton = ({icon, onPress, size}: IconParam) => {
   return (
-    <S.IconTouchable onPress={onPress}>
-      <S.IconImage source={icon} />
-    </S.IconTouchable>
+    <Pressable onPress={onPress}>
+      <S.IconImage source={icon} size={size} />
+    </Pressable>
   );
 };
 

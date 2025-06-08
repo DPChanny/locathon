@@ -6,7 +6,7 @@ import DonationHonorWall from './DonationHonor';
 import DonationStatus from './DonationStatus';
 import DonationStoreDetail from './DonationStoreDetail';
 import {View} from 'react-native';
-import NotificationButton from '../../components/buttons/NotificationButton';
+import IconButton from '../../components/buttons/IconButton';
 
 export type DonationStackParam = {
   DonationMain: undefined;
@@ -21,6 +21,7 @@ const Stack = createNativeStackNavigator();
 const DonationStack = () => {
   return (
     <Stack.Navigator
+      initialRouteName="DonationMain"
       screenOptions={{
         headerTitleAlign: 'center',
         headerShadowVisible: false,
@@ -32,7 +33,7 @@ const DonationStack = () => {
           title: '기부',
           headerRight: () => (
             <View style={{marginRight: 14}}>
-              <NotificationButton />
+              <IconButton icon={require('../../assets/Bell.png')} />
             </View>
           ),
         }}

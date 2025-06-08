@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useRef} from 'react';
 import {Text} from 'react-native';
-import BottomSheet from '../../components/BottomSheet';
+import BottomSheet from '../../components/ui/BottomSheet';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const FoodMap = () => {

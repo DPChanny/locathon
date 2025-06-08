@@ -6,7 +6,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
-import {Container} from '../styles/GlobalStyles';
+import {Container} from '../../styles/GlobalStyles';
 
 const {height} = Dimensions.get('window');
 const EXPANDED = 0;
