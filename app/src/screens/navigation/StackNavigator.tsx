@@ -27,7 +27,6 @@ const StackNavigator = () => {
         component={Onboarding}
         options={{headerShown: false}}
       />
-
       <Stack.Screen
         name="BusinessStack"
         component={BusinessStack}

@@ -5,8 +5,6 @@ import DonationCertify from './DonationCertify';
 import DonationHonorWall from './DonationHonor';
 import DonationStatus from './DonationStatus';
 import DonationStoreDetail from './DonationStoreDetail';
-import {View} from 'react-native';
-import IconButton from '../../components/buttons/IconButton';
 
 export type DonationStackParam = {
   DonationMain: undefined;
@@ -29,14 +27,7 @@ const DonationStack = () => {
       <Stack.Screen
         name="DonationMain"
         component={DonationMain}
-        options={{
-          title: '기부',
-          headerRight: () => (
-            <View style={{marginRight: 14}}>
-              <IconButton icon={require('../../assets/Bell.png')} />
-            </View>
-          ),
-        }}
+        options={{title: '기부'}}
       />
       <Stack.Screen
         name="DonationCertify"

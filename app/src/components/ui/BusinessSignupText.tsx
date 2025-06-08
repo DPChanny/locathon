@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomText from '../CustomText';
+import CustomText from './CustomText';
 import {Pressable} from 'react-native';
 import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';

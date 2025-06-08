@@ -1,10 +1,10 @@
 import styled from 'styled-components/native';
 import {colors} from './colors';
-import CustomText from '../components/CustomText';
+import CustomText from '../components/ui/CustomText';
 
 export const PrimaryWrapper = styled.Pressable`
   background-color: ${colors.green};
-  width: 364px;
+  width: 100%;
   height: 62px;
   padding: 19px 0;
   border-radius: 20px;
@@ -14,7 +14,7 @@ export const PrimaryWrapper = styled.Pressable`
 
 export const SecondaryWrapper = styled.Pressable`
   background-color: ${colors.green};
-  width: 364px;
+  width: 100%;
   height: 53px;
   padding: 14.5px 0;
   border-radius: 42px;

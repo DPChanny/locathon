@@ -8,7 +8,7 @@ import {BusinessStackParam} from '../business/BusinessStack';
 import start_logo from '../../assets/start_logo.png';
 import header_logo from '../../assets/header_logo.png';
 import start_msg from '../../assets/start_msg.png';
-import CustomText from '../../components/CustomText';
+import CustomText from '../../components/ui/CustomText';
 import {View} from 'react-native';
 import IconCircleRow from '../../components/ui/IconCircleRow';
 import {colors} from '../../styles/colors';
@@ -26,6 +26,8 @@ const Onboarding = () => {
         flex: 1,
         alignItems: 'center',
         backgroundColor: `${colors.cream}`,
+        paddingLeft: 24,
+        paddingRight: 24,
       }}>
       <Image
         source={header_logo}
@@ -50,7 +52,7 @@ const Onboarding = () => {
       <IconCircleRow />
       <View
         style={{
-          width: 364,
+          width: '100%',
           height: 1,
           backgroundColor: '#b9b9b9',
           marginTop: 20,

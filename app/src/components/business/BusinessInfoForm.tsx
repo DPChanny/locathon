@@ -1,0 +1,49 @@
+import React from 'react';
+import LabeledInput from '../inputs/LabeledInput';
+import {View} from 'react-native';
+import AddressForm from './AddressForm';
+import PrimaryButton from '../buttons/PrimaryButton';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import CustomText from '../ui/CustomText';
+
+interface BusinessInfo {
+  name: string;
+  phone: string;
+  category: string;
+  address: string;
+}
+
+interface Props {
+  formData: BusinessInfo;
+  onChange: (field: keyof BusinessInfo, value: string) => void;
+}
+
+const BusinessInfoForm = ({formData, onChange}: Props) => {
+  return (
+    <View
+      style={{
+        width: '100%',
+      }}>
+      <CustomText
+        style={{
+          alignSelf: 'flex-start',
+          fontSize: 20,
+          lineHeight: 30,
+          marginTop: 24,
+          marginBottom: 24,
+        }}
+        weight="600">
+        사업자 등록 정보를{'\n'}기준으로 작성해 주세요
+      </CustomText>
+      <LabeledInput label="사업자명" placeholder="사업자명을 입력하세요." />
+      <LabeledInput
+        label="사업자 전화번호"
+        placeholder="사업자 전화번호를 입력하세요."
+      />
+      <AddressForm />
+      <LabeledInput label="업종을 입력하세요" placeholder="업종" />
+    </View>
+  );
+};
+
+export default BusinessInfoForm;
