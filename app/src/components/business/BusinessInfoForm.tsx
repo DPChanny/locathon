@@ -2,8 +2,6 @@ import React from 'react';
 import LabeledInput from '../inputs/LabeledInput';
 import {View} from 'react-native';
 import AddressForm from './AddressForm';
-import PrimaryButton from '../buttons/PrimaryButton';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import CustomText from '../ui/CustomText';
 
 interface BusinessInfo {

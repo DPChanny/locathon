@@ -1,13 +1,11 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity} from 'react-native';
-import {CompositeNavigationProp, useNavigation} from '@react-navigation/native';
+import {Image} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../navigation/StackNavigator';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {BusinessStackParam} from '../business/BusinessStack';
-import start_logo from '../../assets/start_logo.png';
-import header_logo from '../../assets/header_logo.png';
-import start_msg from '../../assets/start_msg.png';
+import start_logo from '../../assets/images/start_logo.png';
+import header_logo from '../../assets/images/header_logo.png';
 import CustomText from '../../components/ui/CustomText';
 import {View} from 'react-native';
 import IconCircleRow from '../../components/ui/IconCircleRow';
@@ -44,11 +42,6 @@ const Onboarding = () => {
         weight="700">
         지금 공유냉장고에서{'\n'}기부해보세요~
       </CustomText>
-      <Image
-        source={start_msg}
-        style={{width: 135, height: 52, marginTop: 100}}
-        resizeMode="contain"
-      />
       <IconCircleRow />
       <View
         style={{

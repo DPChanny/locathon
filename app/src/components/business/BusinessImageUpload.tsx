@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import {Image, PermissionsAndroid, Platform, View} from 'react-native';
+import {Image, View} from 'react-native';
 import CustomText from '../ui/CustomText';
 import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';
 import ImageUpload from '../ui/ImageUpload';
-import {launchImageLibrary} from 'react-native-image-picker';
 import {FlatList} from 'react-native-gesture-handler';
-import plusIcon from '../../assets/plus.png';
+import plusIcon from '../../assets/images/plus.png';
 import {useImagePicker} from '../hooks/useImagePicker';
 
 const MAX_DETAIL_IMAGES = 5;
