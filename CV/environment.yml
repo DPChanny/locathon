@@ -1,0 +1,13 @@
+name: yolov8test
+channels
+  - defaults
+  - conda-forge
+dependencies
+  - python=3.11
+  - flask
+  - numpy
+  - pip
+  - pip
+      - opencv-python
+      - ultralytics
+      - deep_sort_realtime
