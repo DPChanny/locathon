@@ -32,7 +32,11 @@ const StackNavigator = () => {
         component={BusinessStack}
         options={{headerShown: false}}
       />
-      <Stack.Screen name="Main" component={TabNavigator} />
+      <Stack.Screen
+        name="Main"
+        component={TabNavigator}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Shared"
         component={SharedStack}
