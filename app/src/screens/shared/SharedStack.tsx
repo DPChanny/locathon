@@ -2,9 +2,11 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DonationHistory from '../shared/DonationHistory';
 import NotificationList from '../shared/NotificationList';
+import {colors} from '../../styles/colors';
+import CustomText from '../../components/ui/CustomText';
 
 export type SharedStackParamList = {
-  DonationHistory: undefined;
+  DonationHistory: {storeId: number};
   NotificationList: undefined;
 };
 
@@ -16,6 +18,14 @@ const SharedStack = () => {
       screenOptions={{
         headerTitleAlign: 'center',
         headerShadowVisible: false,
+        headerTitle: ({children}) => (
+          <CustomText style={{fontSize: 17}} weight="600">
+            {children}
+          </CustomText>
+        ),
+        headerStyle: {
+          backgroundColor: colors.cream,
+        },
       }}>
       <Stack.Screen
         name="DonationHistory"

@@ -1,7 +1,7 @@
 export const donors = [
   {
     id: 1,
-    name: '가게1',
+    name: '가게 이름',
     category: '음식점',
     donationCount: 50,
     gallery: [

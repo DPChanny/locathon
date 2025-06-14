@@ -7,6 +7,7 @@ import DonationStoreDetail from './DonationStoreDetail';
 import {Image} from 'react-native';
 import headerLogo from '../../assets/images/header_logo.png';
 import {colors} from '../../styles/colors';
+import CustomText from '../../components/ui/CustomText';
 
 export type DonationStackParam = {
   DonationMain: undefined;
@@ -40,7 +41,20 @@ const DonationStack = () => {
         },
       }}>
       <Stack.Screen name="DonationMain" component={DonationMain} />
-      <Stack.Screen name="DonationCertify" component={DonationCertify} />
+      <Stack.Screen
+        name="DonationCertify"
+        component={DonationCertify}
+        options={{
+          headerTitle: () => (
+            <CustomText style={{fontSize: 17}} weight="600">
+              기부인증하기
+            </CustomText>
+          ),
+          headerStyle: {
+            backgroundColor: colors.cream,
+          },
+        }}
+      />
       <Stack.Screen name="DonationHonor" component={DonationHonor} />
       <Stack.Screen
         name="DonationStoreDetail"

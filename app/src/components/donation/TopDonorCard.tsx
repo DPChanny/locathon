@@ -3,20 +3,14 @@ import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';
 import CustomText from '../ui/CustomText';
 import {Image, View} from 'react-native';
+import {Donor} from '../../types/donor';
 
 interface Props {
   donor: Donor;
+  onPress: () => void;
 }
 
-interface Donor {
-  id: number;
-  name: string;
-  donationCount: number;
-  gallery: any[];
-  description: string;
-}
-
-const DonorCard = styled.View`
+const DonorCard = styled.Pressable`
   width: 100%;
   height: 203px;
   box-sizing: border-box;
@@ -36,9 +30,9 @@ const Badge = styled.View`
   background-color: ${colors.gray8};
 `;
 
-const TopDonorCard = ({donor}: Props) => {
+const TopDonorCard = ({donor, onPress}: Props) => {
   return (
-    <DonorCard>
+    <DonorCard onPress={onPress}>
       <View
         style={{
           flexDirection: 'row',

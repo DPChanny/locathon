@@ -3,23 +3,12 @@ import {Image, View} from 'react-native';
 import CustomText from '../ui/CustomText';
 import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';
+import {Donor} from '../../types/donation.types';
 
 interface Props {
   donor: Donor;
   onPress: () => void;
   rank: number;
-}
-
-interface Donor {
-  id: number;
-  name: string;
-  category: string;
-  donationCount: number;
-  gallery: any[];
-  description: string;
-  address: string;
-  phone: string;
-  openHours: string;
 }
 
 const RankItemWrapper = styled.Pressable`

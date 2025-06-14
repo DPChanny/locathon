@@ -3,9 +3,9 @@ import {Image, View} from 'react-native';
 import CustomText from '../ui/CustomText';
 import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';
-import ImageUpload from '../ui/ImageUpload';
+import ImageUploadIcon from '../ui/ImageUploadIcon';
 import {FlatList} from 'react-native-gesture-handler';
-import plusIcon from '../../assets/images/plus.png';
+import plusIcon from '../../assets/images/icon/plus.png';
 import {useImagePicker} from '../hooks/useImagePicker';
 
 const MAX_DETAIL_IMAGES = 5;
@@ -90,11 +90,11 @@ const BusinessImageUpload = () => {
         {profileImage ? (
           <PreviewImage source={{uri: profileImage}} />
         ) : (
-          <ImageUpload onPress={() => handleProfile} />
+          <ImageUploadIcon onPress={() => handleProfile} />
         )}
         <Label style={{marginTop: 16}}>상세 이미지 (0/5)</Label>
         {detailImages.length === 0 ? (
-          <ImageUpload onPress={handleDetail} />
+          <ImageUploadIcon onPress={handleDetail} />
         ) : (
           <FlatList
             horizontal

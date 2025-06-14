@@ -9,18 +9,7 @@ import {useNavigation} from '@react-navigation/native';
 import badge1 from '../../assets/images/donation/badge1.png';
 import badge2 from '../../assets/images/donation/badge2.png';
 import badge3 from '../../assets/images/donation/badge3.png';
-
-interface Donor {
-  id: number;
-  name: string;
-  category: string;
-  donationCount: number;
-  gallery: any[];
-  description: string;
-  address: string;
-  phone: string;
-  openHours: string;
-}
+import {Donor} from '../../types/donation.types';
 
 type Navigation = NativeStackNavigationProp<DonationStackParam>;
 

@@ -1,0 +1,42 @@
+export const donationHistoryList = [
+  {
+    id: 1,
+    timestamp: new Date('2025-05-26T12:13:00').getTime(),
+    status: '기부완료',
+    image: require('../assets/images/dessert.png'),
+    title: '어쩌고 저쩌고',
+    quantity: 1,
+  },
+  {
+    id: 2,
+    timestamp: new Date('2025-02-25T16:45:00').getTime(),
+    status: '기부완료',
+    image: require('../assets/images/dessert.png'),
+    title: '샌드위치 남음',
+    quantity: 2,
+  },
+  {
+    id: 3,
+    timestamp: new Date('2025-03-24T10:30:00').getTime(),
+    status: '기부완료',
+    image: require('../assets/images/dessert.png'),
+    title: '샐러드 일부',
+    quantity: 1,
+  },
+  {
+    id: 4,
+    timestamp: new Date('2025-04-22T18:05:00').getTime(),
+    status: '기부완료',
+    image: require('../assets/images/dessert.png'),
+    title: '빵류 정리',
+    quantity: 3,
+  },
+  {
+    id: 5,
+    timestamp: new Date('2025-05-21T14:10:00').getTime(),
+    status: '기부완료',
+    image: require('../assets/images/dessert.png'),
+    title: '디저트 포장 불가',
+    quantity: 1,
+  },
+];

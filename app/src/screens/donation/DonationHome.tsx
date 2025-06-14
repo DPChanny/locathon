@@ -56,7 +56,15 @@ const DonationHome = () => {
           onPress={() => navigation.navigate('DonationHonor')}
         />
       </View>
-      <TopDonorCard donor={top3Donors[0]} />
+      <TopDonorCard
+        donor={top3Donors[0]}
+        onPress={() =>
+          navigation.navigate('DonationStoreDetail', {
+            storeId: top3Donors[0].id,
+            rank: 1,
+          })
+        }
+      />
     </Container>
   );
 };

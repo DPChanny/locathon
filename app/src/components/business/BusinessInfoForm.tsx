@@ -3,17 +3,11 @@ import LabeledInput from '../inputs/LabeledInput';
 import {View} from 'react-native';
 import AddressForm from './AddressForm';
 import CustomText from '../ui/CustomText';
-
-interface BusinessInfo {
-  name: string;
-  phone: string;
-  category: string;
-  address: string;
-}
+import {Donor} from '../../types/donation.types';
 
 interface Props {
-  formData: BusinessInfo;
-  onChange: (field: keyof BusinessInfo, value: string) => void;
+  formData: Donor;
+  onChange: (field: keyof Donor, value: string) => void;
 }
 
 const BusinessInfoForm = ({formData, onChange}: Props) => {

@@ -3,7 +3,7 @@ import {Image, View} from 'react-native';
 import CustomText from '../ui/CustomText';
 import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';
-import plusIcon from '../../assets/images/plus.png';
+import plusIcon from '../../assets/images/icon/plus.png';
 
 interface Props {
   onPress: () => void;
