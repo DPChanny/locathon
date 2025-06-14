@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';
 import ImageUpload from '../ui/ImageUpload';
 import {FlatList} from 'react-native-gesture-handler';
-import plusIcon from '../../assets/images/plus.png';
+import plusIcon from '../../assets/images/icon/plus.png';
 import {useImagePicker} from '../hooks/useImagePicker';
 
 const MAX_DETAIL_IMAGES = 5;

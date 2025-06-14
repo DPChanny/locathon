@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {colors} from '../../styles/colors';
-import imageLogo from '../../assets/images/image_upload_logo.png';
+import imageLogo from '../../assets/images/icon/image_upload_logo.png';
 import {Image} from 'react-native';
 import CustomText from './CustomText';
 
