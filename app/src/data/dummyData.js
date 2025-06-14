@@ -4,6 +4,8 @@ export const donors = [
     name: '가게 이름',
     category: '음식점',
     donationCount: 50,
+    stampCount: 10,
+    businessNumber: '123-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -19,6 +21,8 @@ export const donors = [
     name: '가게2',
     category: '카페',
     donationCount: 45,
+    stampCount: 5,
+    businessNumber: '223-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -34,6 +38,8 @@ export const donors = [
     name: '가게3',
     category: '베이커리',
     donationCount: 40,
+    stampCount: 0,
+    businessNumber: '323-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -49,6 +55,8 @@ export const donors = [
     name: '가게4',
     category: '음식점',
     donationCount: 38,
+    stampCount: 8,
+    businessNumber: '423-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -64,6 +72,8 @@ export const donors = [
     name: '가게5',
     category: '카페',
     donationCount: 35,
+    stampCount: 5,
+    businessNumber: '523-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -79,6 +89,8 @@ export const donors = [
     name: '가게6',
     category: '편의점',
     donationCount: 33,
+    stampCount: 3,
+    businessNumber: '623-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -94,6 +106,8 @@ export const donors = [
     name: '가게7',
     category: '음식점',
     donationCount: 30,
+    stampCount: 0,
+    businessNumber: '723-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -109,6 +123,8 @@ export const donors = [
     name: '가게8',
     category: '베이커리',
     donationCount: 28,
+    stampCount: 8,
+    businessNumber: '823-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -124,6 +140,8 @@ export const donors = [
     name: '가게9',
     category: '음식점',
     donationCount: 26,
+    stampCount: 6,
+    businessNumber: '923-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),
@@ -139,6 +157,8 @@ export const donors = [
     name: '가게10',
     category: '카페',
     donationCount: 25,
+    stampCount: 5,
+    businessNumber: '023-45-67890',
     gallery: [
       require('../assets/images/store_img.png'),
       require('../assets/images/store_img.png'),

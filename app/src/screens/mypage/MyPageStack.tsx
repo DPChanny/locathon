@@ -4,6 +4,8 @@ import MyPage from './MyPage';
 import StoreInfoEdit from './StoreInfoEdit';
 import MyStampView from './MyStampView';
 import MyVolunteer from './MyVolunteer';
+import CustomText from '../../components/ui/CustomText';
+import {colors} from '../../styles/colors';
 
 export type MyPageStackParam = {
   MyPage: undefined;
@@ -20,6 +22,14 @@ const MyPageStack = () => {
       initialRouteName="MyPage"
       screenOptions={{
         headerTitleAlign: 'center',
+        headerTitle: ({children}) => (
+          <CustomText style={{fontSize: 17}} weight="600">
+            {children}
+          </CustomText>
+        ),
+        headerStyle: {
+          backgroundColor: colors.cream,
+        },
         headerShadowVisible: false,
       }}>
       <Stack.Screen

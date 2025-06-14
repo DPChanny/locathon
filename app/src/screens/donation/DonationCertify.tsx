@@ -62,7 +62,6 @@ const DonationCertify = () => {
   const [itemCount, setItemCount] = useState(0);
 
   const handleUpload = () => {
-    /*
     if (!uploadedImage) {
       Toast.show({
         type: 'myCustomToast',
@@ -81,7 +80,6 @@ const DonationCertify = () => {
       });
       return;
     }
-      */
     setStampModalVisible(true);
   };
 
