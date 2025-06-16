@@ -1,0 +1,20 @@
+name: fastapi
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - sqlalchemy
+  - tenacity
+  - boto3
+  - black
+  - fastapi
+  - pymysql
+  - python-dotenv
+  - python-jose
+  - passlib
+  - cachetools
+  - requests
+  - pip
+  - pip:
+      - uvicorn[standard]
