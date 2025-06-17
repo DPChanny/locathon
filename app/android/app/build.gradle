@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.app"
+    namespace "com.locathon.app"
     defaultConfig {
-        applicationId "com.app"
+        applicationId "com.locathon.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -116,4 +116,9 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+
 }
+
+apply plugin: 'com.google.gms.google-services'

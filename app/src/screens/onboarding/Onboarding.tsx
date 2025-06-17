@@ -27,20 +27,46 @@ const Onboarding = () => {
         paddingLeft: 24,
         paddingRight: 24,
       }}>
-      <Image
-        source={header_logo}
-        style={{width: 30, height: 26, marginBottom: 113}}
-        resizeMode="contain"
-      />
+      <View style={{width: '100%', paddingLeft: 16, paddingRight: 16}}>
+        <Image
+          source={header_logo}
+          style={{
+            width: 102,
+            height: 21,
+            alignSelf: 'flex-start',
+            marginTop: 40,
+            marginBottom: 15,
+          }}
+          resizeMode="contain"
+        />
+        <CustomText
+          style={{
+            fontSize: 22,
+            lineHeight: 31.46,
+            color: colors.gray8,
+            alignSelf: 'flex-start',
+          }}
+          weight="700">
+          우리 동네, 우리 손으로{'\n'}채우는 냉장고
+        </CustomText>
+      </View>
       <Image
         source={start_logo}
-        style={{width: 151, height: 132, marginBottom: 52}}
+        style={{
+          width: 246,
+          height: 362,
+          marginTop: 36.92,
+          marginBottom: 14.62,
+        }}
         resizeMode="contain"
       />
       <CustomText
-        style={{textAlign: 'center', fontSize: 20, lineHeight: 30}}
-        weight="700">
-        지금 공유냉장고에서{'\n'}기부해보세요~
+        style={{
+          fontSize: 15,
+          color: '#7b7b7b',
+        }}
+        weight="400">
+        간편 로그인
       </CustomText>
       <IconCircleRow />
       <View
