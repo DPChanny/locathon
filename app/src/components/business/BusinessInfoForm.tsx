@@ -6,7 +6,7 @@ import CustomText from '../ui/CustomText';
 import {Donor} from '../../types/donation.types';
 
 interface Props {
-  formData: Donor;
+  formData: Partial<Donor>;
   onChange: (field: keyof Donor, value: string) => void;
 }
 

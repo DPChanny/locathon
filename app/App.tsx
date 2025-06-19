@@ -8,12 +8,14 @@ import Toast from 'react-native-toast-message';
 import CustomErrToast from './src/components/ui/CustomErrToast';
 import CustomSuccessToast from './src/components/ui/CustomSuccessToast';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import {GOOGLE_CLIENT_ID} from '@env';
 
 const App: React.FC = () => {
   useEffect(() => {
+    console.log('Google Client ID:', GOOGLE_CLIENT_ID);
+
     GoogleSignin.configure({
-      webClientId:
-        '456575790480-mm1u64lgf7ropubsja2lp6due0abqmof.apps.googleusercontent.com',
+      webClientId: GOOGLE_CLIENT_ID,
     });
   }, []);
 

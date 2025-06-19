@@ -1,13 +1,11 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DonationHistory from '../shared/DonationHistory';
-import NotificationList from '../shared/NotificationList';
 import {colors} from '../../styles/colors';
 import CustomText from '../../components/ui/CustomText';
 
 export type SharedStackParamList = {
   DonationHistory: {storeId: number};
-  NotificationList: undefined;
 };
 
 const Stack = createNativeStackNavigator<SharedStackParamList>();
@@ -31,11 +29,6 @@ const SharedStack = () => {
         name="DonationHistory"
         component={DonationHistory}
         options={{title: '기부 내역'}}
-      />
-      <Stack.Screen
-        name="NotificationList"
-        component={NotificationList}
-        options={{title: '알림'}}
       />
     </Stack.Navigator>
   );

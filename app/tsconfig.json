@@ -4,5 +4,5 @@
     "resolveJsonModule": true,
     "esModuleInterop": true
   },
-  "include": ["images.d.ts", "src/**/*"]
+  "include": ["env.d.ts", "images.d.ts", "src/**/*", "**/*.ts", "**/*.tsx"]
 }

@@ -39,6 +39,8 @@ const IconCircleRow = () => {
         provider: 'google',
         id_token: idToken,
       });
+      console.log('userInfo', userInfo);
+
       const accessToken = response.data.data.access_token;
       await AsyncStorage.setItem('access_token', accessToken);
       Toast.show({
@@ -49,6 +51,7 @@ const IconCircleRow = () => {
       });
       navigation.navigate('Main');
     } catch (error) {
+      console.log(error);
       Toast.show({
         type: 'myCustomToast',
         text1: '로그인 실패',
